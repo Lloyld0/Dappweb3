@@ -1,6 +1,7 @@
 export const WHITELIST_CONTRACT_ADDRESS = "0xD73F6579B3c2118234cB2271f5e2DeFB9adb09E0";
 export const TOKEN_CONTRACT_ADDRESS = "0xA84C243C03fdcBc5c595244e9bfac2Bcc9E44e0D";
 export const NFT_CONTRACT_ADDRESS = "0xf99B407242981CCc14Df1651457CebD9c2b987B1";
+export const CRYPTODEVS_DAO_CONTRACT_ADDRESS = "0x83F29FE1B0B68df624a61a622b2DBFB267FBF771";
 export const WHITELIST_CONTRACT_ABI = [
   {
     "inputs": [
@@ -1094,6 +1095,193 @@ export const NFT_CONTRACT_ABI = [
   {
     "inputs": [],
     "name": "withdraw",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "stateMutability": "payable",
+    "type": "receive"
+  }
+];
+export const CRYPTODEVS_DAO_ABI = [
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_nftMarketplace",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_cryptoDevsNFT",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "stateMutability": "payable",
+    "type": "fallback"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_nftTokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "createProposal",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "proposalIndex",
+        "type": "uint256"
+      }
+    ],
+    "name": "executeProposal",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "numProposals",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "proposals",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "nftTokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "deadline",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "yayVotes",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "nayVotes",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "executed",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "proposalIndex",
+        "type": "uint256"
+      },
+      {
+        "internalType": "enum CryptoDevsDAO.Vote",
+        "name": "vote",
+        "type": "uint8"
+      }
+    ],
+    "name": "voteOnProposal",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "withdrawEther",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
