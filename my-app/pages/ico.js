@@ -404,7 +404,7 @@ return (
         )}
       </div>
       <div>
-        <img className={styles.image} src="./0.svg" />
+        <img className={styles.image} src="./cryptodevs/0.svg" />
       </div>
     </div>
 
