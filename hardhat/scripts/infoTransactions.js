@@ -1,8 +1,9 @@
-// Setup: npm install alchemy-sdk
+require("dotenv").config({ path: ".env" });
+const { ETH_MAINNET_API_KEY_ALCHEMY} = process.env;
 const{ Alchemy, Network } = require("alchemy-sdk");
 
 const config = {
-  apiKey: "3C6RTh-0CiG92bbUlMUrfednctPAbpRf",
+  apiKey: ETH_MAINNET_API_KEY_ALCHEMY,
   network: Network.ETH_MAINNET,
 };
 const alchemy = new Alchemy(config);

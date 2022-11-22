@@ -1,8 +1,10 @@
 // Setup
-const { Network, Alchemy } = require('alchemy-sdk');
+require("dotenv").config({ path: ".env" });
+const {MUMBAI_API_KEY_ALCHEMY} = process.env;
+const{ Alchemy, Network } = require("alchemy-sdk");
 
 const settings = {
-    apiKey: "DW67CsVelYRj5KUvF38dHgxP5Y4VqI4r",
+    apiKey: MUMBAI_API_KEY_ALCHEMY,
     network: Network.MATIC_MUMBAI,
 };
 
