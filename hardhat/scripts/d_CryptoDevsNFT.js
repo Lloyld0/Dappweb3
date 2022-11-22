@@ -1,6 +1,6 @@
 const { ethers } = require("hardhat");
 require("dotenv").config({ path: ".env" });
-require("@nomiclabs/hardhat-etherscan");
+//require("@nomiclabs/hardhat-etherscan");
 const { WHITELIST_CONTRACT_ADDRESS, METADATA_URL } = require("../constants");
 
 async function main() {
