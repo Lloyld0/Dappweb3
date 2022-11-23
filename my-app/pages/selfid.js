@@ -1,4 +1,4 @@
-import styles from "../styles/Selfid.css";
+//import styles from "../styles/Selfid.css";
 import { useViewerConnection } from "@self.id/react";
 import { EthereumAuthProvider } from "@self.id/web";
 import { useEffect, useRef, useState } from "react";
